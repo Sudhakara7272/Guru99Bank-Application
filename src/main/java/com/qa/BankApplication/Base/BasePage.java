@@ -8,6 +8,7 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
@@ -21,6 +22,7 @@ public class BasePage {
 
 	public WebDriver driver;
 	public Properties prop;
+	public static String flash;
 	
 	/**
 	 * This method is used to initialize the driver on the basis of given browser
@@ -29,9 +31,20 @@ public class BasePage {
 	public WebDriver initialize_driver(Properties prop) {
 		//String browser= "chrome";
 		String browser=prop.getProperty("browser");
+		String headless=prop.getProperty("headless");
+		flash=prop.getProperty("elementflash");
+		
 		if(browser.equals("chrome")) {
-			WebDriverManager.chromedriver().setup();
-			driver=new ChromeDriver();
+			//WebDriverManager.chromedriver().setup();
+			System.setProperty("webdriver.chrome.driver", "F:\\Selenium Videos\\Naveen Automation Labs\\chromedriver.exe");
+			if(headless.equals("yes")) {
+				ChromeOptions co=new ChromeOptions();
+				co.addArguments("--headless");
+				driver=new ChromeDriver(co);
+			} else {
+				driver=new ChromeDriver();
+			}
+			
 		} else if(browser.equals("firefox")) {
 			WebDriverManager.firefoxdriver().setup();
 			driver=new FirefoxDriver();

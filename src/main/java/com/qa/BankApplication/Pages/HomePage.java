@@ -14,29 +14,36 @@ public class HomePage extends BasePage{
 	
 	By header=By.cssSelector("h2.barone");
 	By accountname=By.xpath("/html/body/table/tbody/tr/td/table/tbody/tr[3]/td");
+	By NewCustomer=By.xpath("//a[text()='New Customer']");
 	
 	public HomePage(WebDriver driver) {
 		this.driver=driver;
-		 elementUtil=new ElementUtil(driver);
+		// elementUtil=new ElementUtil(driver);
 		
 	}
 	
 	public String getHomepageTitle() {
-		//return driver.getTitle();
-		return elementUtil.waitForPageTitle(Constants.HOME_PAGE_TITLE);
+		return driver.getTitle();
+		//return elementUtil.waitforPageTitle(Constants.HOME_PAGE_TITLE);
 	}
 	public String getHomePageHeadervalue() {
-		return elementUtil.doGetText(header);
-		//return driver.findElement(header).getText();
+		//return elementUtil.doGetText(header);
+		return driver.findElement(header).getText();
 	}
 	public boolean verifyLoggedInAcountName() {
-		return elementUtil.isElementDisplayed(accountname);
-		//return driver.findElement(accountname).isDisplayed();
+		//return elementUtil.isElementDisplayed(accountname);
+		return driver.findElement(accountname).isDisplayed();
 	}
 	
 	public String getLoggedInAccountName() {
-		return elementUtil.doGetText(accountname);
-		//return driver.findElement(accountname).getText();
+		//return elementUtil.doGetText(accountname);
+		return driver.findElement(accountname).getText();
+	}
+	
+	public NewCustomerPage clickonNewCustomer() {
+		driver.findElement(NewCustomer).click();
+		
+		return new NewCustomerPage(driver);
 	}
 	
 	}
