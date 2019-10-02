@@ -6,6 +6,7 @@
 <classes>
 <class name="com.qa.BankApplication.tests.LoginTest"/>
 <class name="com.qa.BankApplication.tests.HomePageTest"/>
+<class name="com.qa.BankApplication.tests.NewCustomerTest"></class>
 </classes>
 </test>
 </suite>
