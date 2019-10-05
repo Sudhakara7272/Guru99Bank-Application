@@ -4,8 +4,8 @@
 <suite name="Guru99 Bank Application test Sanity suite" verbose="7">
 <test name="Guru99 Bank Application test Sanity test">
 <classes>
-<class name="com.qa.BankApplication.tests.LoginTest"/>
-<class name="com.qa.BankApplication.tests.HomePageTest"/>
+<class name="com.qa.BankApplication.tests.LoginTest"></class>
+<class name="com.qa.BankApplication.tests.HomePageTest"></class>
 <class name="com.qa.BankApplication.tests.NewCustomerTest"></class>
 </classes>
 </test>
