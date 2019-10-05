@@ -5,8 +5,6 @@
 <test name="Guru99 Bank Application test Sanity test">
 <classes>
 <class name="com.qa.BankApplication.tests.LoginTest"></class>
-<class name="com.qa.BankApplication.tests.HomePageTest"></class>
-<class name="com.qa.BankApplication.tests.NewCustomerTest"></class>
 </classes>
 </test>
 </suite>
